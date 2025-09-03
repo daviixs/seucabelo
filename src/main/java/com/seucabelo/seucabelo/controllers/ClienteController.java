@@ -1,4 +1,5 @@
-package controllers;
+package com.seucabelo.seucabelo.controllers;
+
 
 import com.seucabelo.seucabelo.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,6 @@ public class ClienteController {
     public String clientes(Model model) {
         var clientes = clienteRepo.findAll(Sort.by(Sort.Direction.DESC, "primeiroNome"));
         model.addAttribute("clientes", clientes);
-        return "clientes";
-
+        return "index";
     }
 }

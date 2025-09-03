@@ -10,7 +10,7 @@
 <div class="container my-3">
     <h1 class="text-center mb-3">Lista de clientes</h1>
 
-    <a class="btn btn-primary" href="/cliente/listar">Recarregar</a>
+    <a class="btn btn-primary" href="/cliente">Recarregar</a>
 
     <table class="table mt-3">
         <thead>
@@ -27,7 +27,7 @@
         <tbody class="table-group-divider">
         <tr th:each="cliente : ${clientes}">
             <td th:text="${cliente.id}"></td>
-            <td th:text="|${cliente.primeiroNome} ${cliente.ultimoNome}|"></td>
+            <td th:text="${cliente.primeiroNome + ' ' + cliente.ultimoNome}"></td>
             <td th:text="${cliente.telefone}"></td>
             <td th:text="${cliente.endereco}"></td>
             <td th:text="${cliente.status}"></td>
@@ -36,6 +36,11 @@
                 <a class="btn btn-primary btn-sm" th:href="@{/cliente/edit(id=${cliente.id})}">Editar</a>
                 <a class="btn btn-danger btn-sm" th:href="@{/cliente/delete(id=${cliente.id})}" onclick="return confirm('Tem certeza?')">Excluir</a>
             </td>
+        </tr>
+
+        <!-- Linha opcional quando a lista estiver vazia -->
+        <tr th:if="${#lists.isEmpty(clientes)}">
+            <td colspan="7" class="text-center text-muted">Nenhum cliente encontrado.</td>
         </tr>
         </tbody>
     </table>
