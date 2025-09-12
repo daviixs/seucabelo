@@ -1,6 +1,8 @@
 package com.seucabelo.seucabelo.controllers;
 
 
+import com.seucabelo.seucabelo.models.Cliente;
+import com.seucabelo.seucabelo.models.ClienteDto;
 import com.seucabelo.seucabelo.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -21,5 +23,12 @@ public class ClienteController {
         var clientes = clienteRepo.findAll(Sort.by(Sort.Direction.DESC, "primeiroNome"));
         model.addAttribute("clientes", clientes);
         return "index";
+    }
+
+    @GetMapping("/create")
+    public String novoCliente(Model model) {
+        ClienteDto clienteDto = new ClienteDto();
+        model.addAttribute("clienteDto", clienteDto);
+        return "create";
     }
 }
