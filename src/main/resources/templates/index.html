@@ -5,6 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lista de clientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        :root {
+            --marrom-escuro: #3c2f2f;
+            --marrom-medio: #4b3832;
+            --marrom-claro: #854442;
+            --dourado: #c0a464;
+            --bege: #fff4e6;
+            --preto: #1a1a1a;
+            --branco: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bege);
+            color: var(--preto);
+        }
+
+        .container {
+            background-color: var(--branco);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        h1 {
+            color: var(--marrom-escuro);
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: var(--dourado);
+            border-color: var(--dourado);
+            color: var(--preto);
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--marrom-claro);
+            border-color: var(--marrom-claro);
+            color: var(--branco);
+        }
+
+        .btn-danger {
+            background-color: var(--marrom-medio);
+            border-color: var(--marrom-medio);
+        }
+
+        .btn-danger:hover {
+            background-color: var(--marrom-escuro);
+            border-color: var(--marrom-escuro);
+        }
+
+        .card {
+            border: 1px solid var(--dourado);
+            background-color: var(--branco);
+        }
+
+        .card-title {
+            color: var(--marrom-escuro);
+            font-weight: bold;
+        }
+
+        .card-subtitle {
+            color: var(--marrom-medio) !important;
+        }
+
+        .alert-secondary {
+            background-color: var(--bege);
+            border-color: var(--dourado);
+            color: var(--marrom-escuro);
+        }
+    </style>
 </head>
 <body>
 <div class="container my-3">
